@@ -1,0 +1,22 @@
+---
+import shiki, { type Lang } from "shiki";
+
+interface Props {
+  language: Lang;
+}
+
+const { language } = Astro.props;
+
+const code = (await Astro.slots.render("default"))
+  .trim()
+  .replace(/&lt;/g, "<")
+  .replace(/&gt;/g, ">");
+
+const highlighter = await shiki.getHighlighter({ theme: "nord" });
+const html = await highlighter.codeToHtml(code, { lang: language });
+---
+
+<div
+  set:html={html}
+  class="my-[3vh] text-[2vw] [&_pre]:px-4 [&_pre]:py-3 [&_pre]:rounded-xl"
+/>
