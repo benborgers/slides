@@ -5,6 +5,7 @@ import Slide from "../components/Slide.astro";
 import HStack from "../components/HStack.astro";
 import Text from "../components/Text.astro";
 import H1 from "../components/H1.astro";
+import H2 from "../components/H2.astro";
 import Code from "../components/Code.astro";
 ---
 
@@ -14,6 +15,7 @@ import Code from "../components/Code.astro";
   </Slide>
 
   <Slide id="functions">
+    <H2>JavaScript function syntax</H2>
     <HStack>
       <Container>
         <Code language="js">
@@ -41,5 +43,27 @@ const double = (number) => {
         </Text>
       </Container>
     </HStack>
+  </Slide>
+
+  <Slide id="arrow-functions">
+    <H2>Arrow functions</H2>
+    <Text>These are equivalent!</Text>
+    <Code language="js">
+      {
+        `
+const double = (number) => {
+  return number * 2;
+}`
+      }
+    </Code>
+
+    <Code language="js">
+      {`const double = (number) => number * 2`}
+    </Code>
+
+    <Text>
+      (No <code>{`{braces}`}</code> and no <code>return</code> means "return the
+      single expression")
+    </Text>
   </Slide>
 </PresentationLayout>
