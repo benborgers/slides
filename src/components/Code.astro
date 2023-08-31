@@ -11,7 +11,9 @@ const code = (await Astro.slots.render("default"))
   .trim()
   .replace(/&lt;/g, "<")
   .replace(/&gt;/g, ">")
-  .replace(/&#39;/g, "'");
+  .replace(/&#39;/g, "'")
+  .replace(/&quot;/g, '"')
+  .replace(/&amp;/g, "&");
 const highlighter = await shiki.getHighlighter({ theme: "nord" });
 const html = await highlighter.codeToHtml(code, { lang: language });
 ---

@@ -95,4 +95,107 @@ function App() {
       }
     </Code>
   </Slide>
+
+  <Slide id="variables">
+    <H2>Variables</H2>
+    <Code language="js">
+      {
+        `
+function Greeting() {
+  const name = "Ben"
+
+  return <p>Hello there, {name}</p>
+}
+// Renders "Hello there, Ben"
+    `
+      }
+    </Code>
+  </Slide>
+
+  <Slide id="expressions">
+    <H2>Expressions</H2>
+    <Code language="js">
+      {
+        `
+function Greeting() {
+  const name = "Ben"
+
+  return <p>Hello there, {name.toUpperCase()}</p>
+}
+// Renders "Hello there, BEN"
+
+function RandomNumber() {
+  return <p>Your random number is {Math.random()}</p>
+}
+// Renders "Your random number is 0.27577077597245814"`
+      }
+    </Code>
+  </Slide>
+
+  <Slide id="ternary">
+    <H2>Ternary operator</H2>
+    <Code language="js">
+      {
+        `
+const icyConditions = true
+const carWheelsToEngage = icyConditions ? 4 : 2
+// "If \`icyConditions\` is true, then \`carWheelsToEngage\` is 4. Otherwise, it's 2.
+
+// Another way to write this without a ternrary operator:
+let carWheelsToEngage
+if (icyConditions) {
+  carWheelsToEngage = 4
+} else {
+  carWheelsToEngage = 2
+}
+// As you can see, the ternary operator is more concise.
+      `
+      }
+    </Code>
+  </Slide>
+
+  <Slide id="conditionals">
+    <H2>Conditionals in React</H2>
+    <Code language="js">
+      {
+        `
+function Greeting() {
+  const niceWeather = false
+
+  return (
+    <div>
+      <p>Good morning!</p>
+      {niceWeather ? (
+        <p>Nice weather, isn't it?</p>
+      ) : (
+        <p>Horrid weather out there, isn't it</p>
+      )}
+    </div>
+  )
+}`
+      }
+    </Code>
+  </Slide>
+
+  <Slide id="and">
+    <H2>Logical AND in React</H2>
+    <Code language="js">
+      {
+        `
+function Greeting() {
+  const niceWeather = false
+
+  return (
+    <div>
+      <p>Good morning!</p>
+
+      {!niceWeather && (
+        <p>Sorry about the weather!</p>
+      )}
+    </div>
+  )
+}`
+      }
+    </Code>
+  </Slide>
 </PresentationLayout>
