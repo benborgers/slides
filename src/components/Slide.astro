@@ -1,0 +1,11 @@
+---
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<div data-slide-id={id} class="h-screen flex flex-col justify-center bg-sky-600/10 border-8 border-sky-400 p-16">
+  <slot />
+</div>
