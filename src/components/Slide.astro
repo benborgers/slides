@@ -13,7 +13,9 @@ const { id } = Astro.props;
   {
     /* Not the outermost component so that the JS can switch the outermost component between display: block and display: none */
   }
-  <div class="h-full flex flex-col justify-center">
-    <slot />
+  <div class="h-full flex items-center">
+    <div>
+      <slot />
+    </div>
   </div>
 </div>
