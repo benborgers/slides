@@ -10,8 +10,8 @@ const { language } = Astro.props;
 const code = (await Astro.slots.render("default"))
   .trim()
   .replace(/&lt;/g, "<")
-  .replace(/&gt;/g, ">");
-
+  .replace(/&gt;/g, ">")
+  .replace(/&#39;/g, "'");
 const highlighter = await shiki.getHighlighter({ theme: "nord" });
 const html = await highlighter.codeToHtml(code, { lang: language });
 ---

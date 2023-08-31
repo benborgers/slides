@@ -1,4 +1,7 @@
 ---
+// This presentation goes alongside this guide:
+// https://jumbocode.ben.page/cheat-sheets/workshop-b
+
 import PresentationLayout from "../layouts/PresentationLayout.astro";
 import Container from "../components/Container.astro";
 import Slide from "../components/Slide.astro";
@@ -65,5 +68,31 @@ const double = (number) => {
       (No <code>{`{braces}`}</code> and no <code>return</code> means "return the
       single expression")
     </Text>
+  </Slide>
+
+  <Slide id="components">
+    <H2>Components</H2>
+    <Code language="js">
+      {
+        `
+function MyButton() {
+  return (
+      <button>I'm a button!</button>
+  )
+}`
+      }
+    </Code>
+    <Code language="js">
+      {
+        `
+function App() {
+  return (
+    <div>
+      <MyButton />
+    </div>
+  )
+}`
+      }
+    </Code>
   </Slide>
 </PresentationLayout>
