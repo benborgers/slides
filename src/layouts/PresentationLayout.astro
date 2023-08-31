@@ -1,0 +1,51 @@
+---
+interface Props {
+  title: string;
+}
+
+import Layout from "./Layout.astro";
+
+const { title } = Astro.props;
+---
+
+<Layout title={title}>
+  <slot />
+
+  <script>
+    const slideIds = Array.from(document.querySelectorAll("[data-slide]")).map(
+      (el) => el.dataset.slide
+    );
+
+    let currentSlideId = location.hash.replace(/^#/, "");
+
+    if (!currentSlideId || !slideIds.includes(currentSlideId)) {
+      currentSlideId = slideIds[0];
+    }
+
+    const navigateToSlide = (id) => {
+      currentSlideId = id;
+      location.hash = id;
+      document.querySelectorAll("[data-slide]").forEach((el) => {
+        el.style.display = el.dataset.slide === id ? "block" : "none";
+      });
+    };
+
+    navigateToSlide(currentSlideId);
+
+    document.addEventListener("keydown", (event) => {
+      const currentSlideIndex = slideIds.findIndex(
+        (id) => id === currentSlideId
+      );
+
+      if (event.key === "ArrowRight") {
+        if (slideIds[currentSlideIndex + 1]) {
+          navigateToSlide(slideIds[currentSlideIndex + 1]);
+        }
+      } else if (event.key === "ArrowLeft") {
+        if (slideIds[currentSlideIndex - 1]) {
+          navigateToSlide(slideIds[currentSlideIndex - 1]);
+        }
+      }
+    });
+  </script>
+</Layout>
