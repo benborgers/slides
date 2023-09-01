@@ -3,9 +3,10 @@ import shiki, { type Lang } from "shiki";
 
 interface Props {
   language: Lang;
+  scaleFactor?: number;
 }
 
-const { language } = Astro.props;
+const { language, scaleFactor = 1 } = Astro.props;
 
 const code = (await Astro.slots.render("default"))
   .trim()
@@ -20,5 +21,6 @@ const html = await highlighter.codeToHtml(code, { lang: language });
 
 <div
   set:html={html}
-  class="my-[3vw] text-[1.75vw] [&_pre]:px-6 [&_pre]:py-3 [&_pre]:rounded-[0.4em] [&_pre]:overflow-scroll [&_pre]:w-max leading-[1.7]"
+  class="my-[3vw] [&_pre]:px-6 [&_pre]:py-3 [&_pre]:rounded-[0.4em] [&_pre]:overflow-scroll [&_pre]:w-max leading-[1.7]"
+  style={{ fontSize: 1.75 * scaleFactor + "vw" }}
 />

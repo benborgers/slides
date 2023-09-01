@@ -72,7 +72,7 @@ const double = (number) => {
 
   <Slide id="components">
     <H2>Components</H2>
-    <Code language="js">
+    <Code language="jsx">
       {
         `
 function MyButton() {
@@ -82,7 +82,7 @@ function MyButton() {
 }`
       }
     </Code>
-    <Code language="js">
+    <Code language="jsx">
       {
         `
 function App() {
@@ -98,7 +98,7 @@ function App() {
 
   <Slide id="variables">
     <H2>Variables</H2>
-    <Code language="js">
+    <Code language="jsx">
       {
         `
 function Greeting() {
@@ -114,7 +114,7 @@ function Greeting() {
 
   <Slide id="expressions">
     <H2>Expressions</H2>
-    <Code language="js">
+    <Code language="jsx">
       {
         `
 function Greeting() {
@@ -156,7 +156,7 @@ if (icyConditions) {
 
   <Slide id="conditionals">
     <H2>Conditionals in React</H2>
-    <Code language="js">
+    <Code language="jsx">
       {
         `
 function Greeting() {
@@ -179,7 +179,7 @@ function Greeting() {
 
   <Slide id="and">
     <H2>Logical AND in React</H2>
-    <Code language="js">
+    <Code language="jsx">
       {
         `
 function Greeting() {
@@ -195,6 +195,142 @@ function Greeting() {
     </div>
   )
 }`
+      }
+    </Code>
+  </Slide>
+
+  <Slide id="map">
+    <H2>Array.map</H2>
+    <Code language="js">
+      {
+        `
+const numbers = [1, 2, 3, 4]
+const doubleNumbers = numbers.map(function (num) {
+    return num * 2
+})
+// doubleNumbers: [2, 4, 6, 8]
+
+// Using the arrow function syntax, this is equivalent to:
+// const doubleNumbers = numbers.map(num => num * 2)
+        `
+      }
+    </Code>
+  </Slide>
+
+  <Slide id="loops">
+    <H2>Loops in React</H2>
+    <Code language="jsx">
+      {
+        `
+function NumberPicker() {
+  const numbers = [1, 2, 3, 4]
+  return (
+      <div>
+          <p>Please pick a number:</p>
+          {numbers.map(num => (
+              <button key={num}>{num}</button>
+          )}
+      </div>
+  )
+}
+    `
+      }
+    </Code>
+    <Text>Note the <code>key</code>, it's required!</Text>
+  </Slide>
+
+  <Slide id="nesting">
+    <H2>Nesting</H2>
+    <Code language="jsx" scaleFactor={0.55}>
+      {
+        `
+function User() {
+    return (
+        <p>This is where a user record would go.</p>
+    )
+}
+
+function HomePage() {
+    return (
+        <div>
+            <p>Look at all our users:</p>
+            <User />
+            <User />
+            <User />
+        </div>
+    )
+}
+
+function UserPage() {
+    return (
+        <div>
+            <p>Here's one user:</p>
+            <User />
+        </div>
+    )
+}
+    `
+      }
+    </Code>
+  </Slide>
+
+  <Slide id="props">
+    <H2>Props in React</H2>
+    <Code language="jsx" scaleFactor={0.6}>
+      {
+        `
+function User(props) {
+  return (
+    <p>
+      {props.firstName} {props.lastName}
+      {props.admin && (
+          <span> (admin)</span>
+      )}
+    </p>
+  )
+}
+
+function HomePage() {
+  return (
+    <div>
+      <p>Look at all our users:</p>
+      <User firstName="Adam" lastName="Smith" />
+      <User firstName="Bella" lastName="Jones" />
+      <User firstName="Cynthia" lastName="Miller" admin={true} />
+    </div>
+  )
+}
+  `
+      }
+    </Code>
+    <Code language="js" scaleFactor={0.6}>
+      {
+        `
+props = { firstName: "Cynthia", lastName: "Miller", admin: true }
+    `
+      }
+    </Code>
+  </Slide>
+
+  <Slide id="destructuring">
+    <H2>Destructuring props</H2>
+
+    <Code language="jsx">
+      {
+        `
+// "Destructuring" the props into independent variables allows us
+// to write "firstName" instead of "props.firstName".
+function User({ firstName, lastName, admin }) {
+  return (
+    <p>
+      {firstName} {lastName}
+      {admin && (
+          <span> (admin)</span>
+      )}
+    </p>
+  )
+}
+    `
       }
     </Code>
   </Slide>
