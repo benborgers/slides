@@ -15,12 +15,12 @@ const code = (await Astro.slots.render("default"))
   .replace(/&#39;/g, "'")
   .replace(/&quot;/g, '"')
   .replace(/&amp;/g, "&");
-const highlighter = await shiki.getHighlighter({ theme: "nord" });
+const highlighter = await shiki.getHighlighter({ theme: "github-light" });
 const html = await highlighter.codeToHtml(code, { lang: language });
 ---
 
 <div
   set:html={html}
-  class="my-12 [&_pre]:px-6 [&_pre]:py-3 [&_pre]:rounded-xl [&_pre]:overflow-scroll [&_pre]:w-max leading-[1.7]"
+  class="my-12 [&_pre]:px-6 [&_pre]:py-3 [&_pre]:rounded-xl [&_pre]:overflow-scroll [&_pre]:w-max [&_pre]:border-2 [&_pre]:border-blue-400 [&_pre]:shadow-sm [&_pre]:shadow-blue-400/20 leading-[1.7]"
   style={{ fontSize: 30 * scale + "px" }}
 />
