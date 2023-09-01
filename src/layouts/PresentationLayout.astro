@@ -8,8 +8,18 @@ import Layout from "./Layout.astro";
 const { title } = Astro.props;
 ---
 
-<Layout title={title}>
-  <slot />
+<Layout
+  title={title}
+  class:list="flex items-center h-screen bg-sky-600/10 overflow-hidden"
+>
+  <div class="h-[calc(900px*var(--scale))]">
+    <slot />
+  </div>
+
+  <script>
+    const scale = window.innerWidth / 1600;
+    document.body.style.setProperty("--scale", scale);
+  </script>
 
   <script>
     const slideIds = Array.from(document.querySelectorAll("[data-slide]")).map(

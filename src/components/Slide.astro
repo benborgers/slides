@@ -8,7 +8,12 @@ const { id } = Astro.props;
 
 <div
   data-slide={id}
-  class="h-screen bg-sky-600/10 border-8 border-sky-400 p-[5vw]"
+  class:list={[
+    "w-[1600px] h-[900px] p-[5vw] scale-[var(--scale)] origin-top-left",
+    import.meta.env.DEV && "border-4 border-sky-400",
+  ]}
+  {/* JS un-hides the correct slide */}
+  style={{ display: "none" }}
 >
   {
     /* Not the outermost component so that the JS can switch the outermost component between display: block and display: none */
