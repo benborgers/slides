@@ -3,10 +3,10 @@ import shiki, { type Lang } from "shiki";
 
 interface Props {
   language: Lang;
-  scaleFactor?: number;
+  scale?: number;
 }
 
-const { language, scaleFactor = 1 } = Astro.props;
+const { language, scale = 1 } = Astro.props;
 
 const code = (await Astro.slots.render("default"))
   .trim()
@@ -22,5 +22,5 @@ const html = await highlighter.codeToHtml(code, { lang: language });
 <div
   set:html={html}
   class="my-12 [&_pre]:px-6 [&_pre]:py-3 [&_pre]:rounded-xl [&_pre]:overflow-scroll [&_pre]:w-max leading-[1.7]"
-  style={{ fontSize: 30 * scaleFactor + "px" }}
+  style={{ fontSize: 30 * scale + "px" }}
 />

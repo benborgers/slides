@@ -70,6 +70,33 @@ const double = (number) => {
     </Text>
   </Slide>
 
+  <Slide id="anatomy">
+    <H2>Anatomy of a React component</H2>
+    <Code language="js" scale={0.7}>
+      {
+        `
+// Filename: ExampleComponent.jsx
+// jsx is a special version of js, or JavaScript, that's used for React
+
+import { something } from "some-package";
+
+// Depending on how your group does CSS styling, this will be different.
+import "./example-component.css";
+
+// "export default" means "when another component does:
+// import MyComponentName from "../path/to/ExampleComponent"
+// this is what will be exported.
+export default function ExampleComponent() {
+  // Variables / logic go here
+  return (
+    <div>Component HTML goes here!</div>
+  )
+}
+    `
+      }
+    </Code>
+  </Slide>
+
   <Slide id="components">
     <H2>Components</H2>
     <Code language="jsx">
@@ -240,7 +267,7 @@ function NumberPicker() {
 
   <Slide id="nesting">
     <H2>Nesting</H2>
-    <Code language="jsx" scaleFactor={0.55}>
+    <Code language="jsx" scale={0.55}>
       {
         `
 function User() {
@@ -275,7 +302,7 @@ function UserPage() {
 
   <Slide id="props">
     <H2>Props in React</H2>
-    <Code language="jsx" scaleFactor={0.6}>
+    <Code language="jsx" scale={0.6}>
       {
         `
 function User(props) {
@@ -302,7 +329,7 @@ function HomePage() {
   `
       }
     </Code>
-    <Code language="js" scaleFactor={0.6}>
+    <Code language="js" scale={0.6}>
       {
         `
 props = { firstName: "Cynthia", lastName: "Miller", admin: true }
