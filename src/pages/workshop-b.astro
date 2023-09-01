@@ -76,9 +76,7 @@ const double = (number) => {
       {
         `
 function MyButton() {
-  return (
-    <button>I'm a button!</button>
-  )
+  return <button>I'm a button!</button>
 }`
       }
     </Code>
@@ -139,7 +137,8 @@ function RandomNumber() {
         `
 const icyConditions = true
 const carWheelsToEngage = icyConditions ? 4 : 2
-// "If \`icyConditions\` is true, then \`carWheelsToEngage\` is 4. Otherwise, it's 2.
+// "If \`icyConditions\` is true, then \`carWheelsToEngage\` is 4.
+// Otherwise, it's 2.
 
 // Another way to write this without a ternrary operator:
 let carWheelsToEngage
