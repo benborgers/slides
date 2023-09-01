@@ -10,15 +10,24 @@ const { title } = Astro.props;
 
 <Layout
   title={title}
-  class:list="flex items-center h-screen bg-sky-600/10 overflow-hidden"
+  class:list="flex items-center justify-center h-screen bg-sky-600/10 overflow-hidden"
 >
-  <div class="h-[calc(900px*var(--scale))]">
+  <div class="h-[calc(900px*var(--scale))] w-[calc(1600px*var(--scale))]">
     <slot />
   </div>
 
   <script>
-    const scale = window.innerWidth / 1600;
-    document.body.style.setProperty("--scale", scale);
+    const updateScale = () => {
+      const scaleWidth = window.innerWidth / 1600;
+      const scaleHeight = window.innerHeight / 900;
+      document.body.style.setProperty(
+        "--scale",
+        Math.min(scaleWidth, scaleHeight)
+      );
+    };
+    updateScale();
+
+    window.addEventListener("resize", updateScale);
   </script>
 
   <script>
