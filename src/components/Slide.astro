@@ -10,7 +10,7 @@ const { id } = Astro.props;
   data-slide={id}
   class:list={[
     "w-[1600px] h-[900px] p-12 scale-[var(--scale)] origin-top-left",
-    import.meta.env.DEV && "border-4 border-sky-400",
+    import.meta.env.DEV && "border border-sky-400/20",
   ]}
   {/* JS un-hides the correct slide */}
   style={{ display: "none" }}
