@@ -1,0 +1,108 @@
+@font-face {
+  font-family: "Garamond Condensed";
+  src: url("/GaramondCondensed/VCGaramondCondensed-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Garamond Condensed";
+  src: url("/GaramondCondensed/VCGaramondCondensed-ThinItalic.woff2")
+    format("woff2");
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Garamond Condensed";
+  src: url("/GaramondCondensed/VCGaramondCondensed-ExtraLight.woff2")
+    format("woff2");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Garamond Condensed";
+  src: url("/GaramondCondensed/VCGaramondCondensed-ExtraLightItalic.woff2")
+    format("woff2");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Garamond Condensed";
+  src: url("/GaramondCondensed/VCGaramondCondensed-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Garamond Condensed";
+  src: url("/GaramondCondensed/VCGaramondCondensed-LightItalic.woff2")
+    format("woff2");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Garamond Condensed";
+  src: url("/GaramondCondensed/VCGaramondCondensed-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Garamond Condensed";
+  src: url("/GaramondCondensed/VCGaramondCondensed-RegularItalic.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Garamond Condensed";
+  src: url("/GaramondCondensed/VCGaramondCondensed-Medium.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Garamond Condensed";
+  src: url("/GaramondCondensed/VCGaramondCondensed-MediumItalic.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Garamond Condensed";
+  src: url("/GaramondCondensed/VCGaramondCondensed-SemiBold.woff2")
+    format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Garamond Condensed";
+  src: url("/GaramondCondensed/VCGaramondCondensed-SemiBoldItalic.woff2")
+    format("woff2");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Garamond Condensed";
+  src: url("/GaramondCondensed/VCGaramondCondensed-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Garamond Condensed";
+  src: url("/GaramondCondensed/VCGaramondCondensed-BoldItalic.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: italic;
+}

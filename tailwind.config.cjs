@@ -1,4 +1,5 @@
 import colors from "tailwindcss/colors";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -7,6 +8,9 @@ module.exports = {
     extend: {
       colors: {
         gray: colors.slate,
+      },
+      fontFamily: {
+        serif: ["Garamond Condensed", ...defaultTheme.fontFamily.serif],
       },
     },
   },
